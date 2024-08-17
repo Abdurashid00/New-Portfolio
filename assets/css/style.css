@@ -74,6 +74,12 @@ body {
   align-items: center;
   gap: 40px;
 }
+.nav__list-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
 
 .nav__list-link {
   color: #fff;
@@ -109,7 +115,7 @@ body {
   width: 100%;
   padding: 50px;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   gap: 10px;
 }
 
@@ -249,7 +255,7 @@ body {
 }
 
 .active {
-  background-color: rgba(123, 74, 226, 1) !important;
+  background-color: rgba(123, 74, 226, 0.7) !important;
   box-shadow: 0 0 25px rgba(123, 74, 226, 1);
 }
 
@@ -361,7 +367,8 @@ body {
 }
 
 .about__me-infos {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .about__me-infos p {
@@ -488,6 +495,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 10px;
+  place-items: center;
   margin-bottom: 20px;
 }
 
@@ -603,6 +611,7 @@ body {
   align-items: center;
   gap: 30px;
   margin: 10px auto;
+  flex-wrap: wrap;
   text-align: center;
 }
 
@@ -635,6 +644,12 @@ body {
   bottom: 0;
   width: 100%;
   padding: 40px 0;
+}
+
+.footer__list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }
 
 .footer .social {
@@ -686,4 +701,180 @@ body {
   margin-top: 30px;
   font-size: 20px;
   text-align: center;
+}
+
+@media (max-width: 1236px) {
+  .nav__list-link {
+    font-size: 20px;
+  }
+
+  .nav__logo p,
+  .nav__logo span {
+    font-size: 24px;
+  }
+
+  .nav__list-mode {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 1122px) {
+  .nav__list-link {
+    font-size: 14px;
+  }
+
+  .nav__logo p,
+  .nav__logo span {
+    font-size: 18px;
+  }
+
+  .nav__list-mode {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 955px) {
+  .nav__list-mode {
+    font-size: 26px;
+  }
+  .nav__content {
+    gap: 0;
+  }
+
+  .intro__content {
+    height: auto;
+    justify-content: center;
+  }
+  .about__me-content {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 768px) {
+  .nav__list {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  .nav__list-2 {
+    opacity: 0;
+    visibility: hidden;
+    top: 340px;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav__list.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav__list.active + .nav__list-2 {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__list-link {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+  }
+  .nav__list-link:hover {
+    background-color: #f0f0f0;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .nav__content {
+    max-width: 370px;
+    width: 100%;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: start;
+  }
+
+  .intro {
+    padding: 6rem 3% 0;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(9, 14, 22, 0.7); 
+    padding: 10px 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .container {
+    margin: 0;
+  }
+
+  .intro__content {
+    height: auto;
+  }
+}
+@media (max-width: 725px) {
+  .timeline-item:nth-child(odd) {
+    text-align: left;
+    padding-right: 0;
+  }
+  .timeline-item:nth-child(even) {
+    text-align: left;
+    padding-left: 0;
+  }
+
+  .timeline-items::before{
+    left: 0;
+  }
+  
+  .timeline-dot{
+    left: -24px;
+  }
+
+  .project__content-item{
+    width: 300px;
+  }
+
+  .project__content-item-img {
+    width: 240px;
+  }
+  .project__content-items{
+    gap: 30px;
+  }
+
+}
+
+@media (max-width:470px) {
+  .tech__boxes{
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+}
+@media (max-width:470px) {
+  .contact form .input-box input, .contact form textarea{
+    font-size: 16px;
+  }
+  .copyright{
+    font-size: 16px;
+  }
 }
