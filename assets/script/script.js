@@ -15,5 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.getElementById('toggleDark').addEventListener('click', function() {
   document.body.classList.toggle('light-theme');
-  
 });
+document.getElementById("toggleDark").addEventListener("click", function() {
+  var element = document.getElementsByClassName("fa-brightness")[0];
+  if (element) {  // Проверка на случай, если элементов с этим классом нет
+    element.classList.toggle("fa-moon");
+  }
+});
+
