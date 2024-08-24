@@ -137,6 +137,7 @@ body {
   width: 100%;
   padding: 50px;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap-reverse;
   gap: 10px;
 }
@@ -892,6 +893,10 @@ body {
   }
   .project__content-items{
     gap: 30px;
+  }
+
+  .intro__img{
+    height: auto;
   }
 
 }
